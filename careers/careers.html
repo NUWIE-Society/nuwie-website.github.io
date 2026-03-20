@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors | NUWiE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { nuwie: { darkest: '#2c1461', medium: '#5b47eb', light: '#705eee' } } } }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900" x-data="{ scrolled: true, mobileMenuOpen: false }">
+
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+
+    <div class="h-24"></div>
+
+    <section class="bg-nuwie-light border-b border-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-black text-white mb-4  tracking-tight">Careers & Internships</h1>
+            <p class="text-xl text-white max-w-2xl mx-auto font-medium">Connecting NUWiE members with industry-leading opportunities.</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        
+        <div class="mb-12 flex flex-col md:flex-row gap-4 justify-between items-center bg-nuwie-darkest p-6 rounded-2xl shadow-xl">
+            <h2 class="text-white font-bold text-lg">ACTIVE OPPORTUNITIES</h2>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <div class="w-24 h-24 flex items-center justify-center bg-gray-50 rounded-xl p-2">
+                        <img src="/sponsors/logos/zenviron.png" alt="Northrop" class="max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-nuwie-darkest group-hover:text-nuwie-medium transition-colors">Expression of interest for Undergraduate Engineers</h3>
+                        <p class="text-gray-500 font-medium">Zenviron</p>
+                        <div class="flex gap-2 mt-2">
+                            <!-- <span class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-red-200">Aerospace</span> -->
+                            <!-- <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-orange-200">Chemical</span> -->
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-amber-200">Civil</span>
+                            <span class="text-[10px] bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-yellow-300">Construction</span>
+                            <span class="text-[10px] bg-lime-100 text-lime-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-lime-200">Electrical</span>
+                            <!-- <span class="text-[10px] bg-green-100 text-green-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-green-200">Environmental</span> -->
+                            <!-- <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-emerald-200">Mechanical</span> -->
+                            <!-- <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-teal-200">Mechatronics</span> -->
+                            <!-- <span class="text-[10px] bg-cyan-100 text-cyan-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-cyan-200">Medical</span> -->
+                            <!-- <span class="text-[10px] bg-sky-100 text-sky-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Mining</span> -->
+                            <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-blue-200">Renewable</span>
+                            <!-- <span class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-indigo-200">Software</span> -->
+                            <!-- <span class="text-[10px] bg-violet-100 text-violet-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-violet-200">Structural</span> -->
+                            <!-- <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-purple-200">Surveying</span> -->
+                            <!-- <span class="text-[10px] bg-sky-100 text-fuchsia-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Systems</span> -->
+                            <!-- <span class="text-[10px] bg-pink-100 text-pink-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">and more</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="https://zenviron.com/people/careers" target="_blank" rel="noopener noreferrer" 
+                        class="inline-block bg-nuwie-darkest text-white px-8 py-3 rounded-full font-bold hover:bg-nuwie-medium transition-colors shadow-lg shadow-nuwie-darkest/20">
+                        View Details                        
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <div class="w-24 h-24 flex items-center justify-center bg-gray-50 rounded-xl p-2">
+                        <img src="/sponsors/logos/aurecon.png" alt="aurecon" class="max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-nuwie-darkest group-hover:text-nuwie-medium transition-colors">Graduate Programs</h3>
+                        <p class="text-gray-500 font-medium">Aurecon</p>
+                        <div class="flex gap-2 mt-2">
+                            <!-- <span class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-red-200">Aerospace</span> -->
+                            <!-- <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-orange-200">Chemical</span> -->
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-amber-200">Civil</span>
+                            <span class="text-[10px] bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-yellow-300">Construction</span>
+                            <span class="text-[10px] bg-lime-100 text-lime-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-lime-200">Electrical</span>
+                            <span class="text-[10px] bg-green-100 text-green-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-green-200">Environmental</span>
+                            <!-- <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-emerald-200">Mechanical</span> -->
+                            <!-- <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-teal-200">Mechatronics</span> -->
+                            <!-- <span class="text-[10px] bg-cyan-100 text-cyan-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-cyan-200">Medical</span> -->
+                            <!-- <span class="text-[10px] bg-sky-100 text-sky-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Mining</span> -->
+                            <!-- <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-blue-200">Renewable</span> -->
+                            <!-- <span class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-indigo-200">Software</span> -->
+                            <!-- <span class="text-[10px] bg-violet-100 text-violet-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-violet-200">Structural</span> -->
+                            <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-purple-200">Surveying</span>
+                            <span class="text-[10px] bg-fuchsia-100 text-fuchsia-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Systems</span>
+                            <span class="text-[10px] bg-pink-100 text-pink-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">and more</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="https://www.aurecongroup.com/careers/early-careers/graduate-programme" target="_blank" rel="noopener noreferrer" 
+                        class="inline-block bg-nuwie-darkest text-white px-8 py-3 rounded-full font-bold hover:bg-nuwie-medium transition-colors shadow-lg shadow-nuwie-darkest/20">
+                        View Details
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- <div class="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <div class="w-24 h-24 flex items-center justify-center bg-gray-50 rounded-xl p-2">
+                        <img src="/" alt="aurecon" class="max-h-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-nuwie-darkest group-hover:text-nuwie-medium transition-colors">Graduate Programs</h3>
+                        <p class="text-gray-500 font-medium">Aurecon</p>
+                        <div class="flex gap-2 mt-2">
+                            <span class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-red-200">Aerospace</span>
+                            <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-orange-200">Chemical</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-amber-200">Civil</span>
+                            <span class="text-[10px] bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-yellow-300">Construction</span>
+                            <span class="text-[10px] bg-lime-100 text-lime-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-lime-200">Electrical</span>
+                            <span class="text-[10px] bg-green-100 text-green-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-green-200">Environmental</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-emerald-200">Mechanical</span>
+                            <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-teal-200">Mechatronics</span>
+                            <span class="text-[10px] bg-cyan-100 text-cyan-800 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-cyan-200">Medical</span>
+                            <span class="text-[10px] bg-sky-100 text-sky-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Mining</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-blue-200">Renewable</span>
+                            <span class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-indigo-200">Software</span>
+                            <span class="text-[10px] bg-violet-100 text-violet-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-violet-200">Structural</span>
+                            <span class="text-[10px] bg-purple-100 text-purple-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-purple-200">Surveying</span>
+                            <span class="text-[10px] bg-fuchsia-100 text-fuchsia-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">Systems</span>
+                            <span class="text-[10px] bg-pink-100 text-pink-700 px-2 py-1 rounded-md font-bold uppercase tracking-wider border border-sky-200">and more</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="#" target="_blank" rel="noopener noreferrer" 
+                        class="inline-block bg-nuwie-darkest text-white px-8 py-3 rounded-full font-bold hover:bg-nuwie-medium transition-colors shadow-lg shadow-nuwie-darkest/20">
+                        View Details
+                    </a>
+                </div>
+            </div> -->
+
+        </div>
+
+        <!-- <section class="mt-20">
+            <h2 class="text-3xl font-black text-nuwie-darkest mb-8 text-center italic font-serif">Resume & Portfolio Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-nuwie-darkest to-nuwie-medium p-8 rounded-3xl text-white">
+                    <h4 class="text-xl font-bold mb-2">Engineering Resume Guide</h4>
+                    <p class="text-white/80 mb-6">Learn how to highlight your technical projects and university society roles effectively.</p>
+                    <button class="bg-white text-nuwie-darkest px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors">Download PDF</button>
+                </div>
+                <div class="bg-white border-2 border-nuwie-darkest p-8 rounded-3xl">
+                    <h4 class="text-xl font-bold text-nuwie-darkest mb-2">Networking Tips</h4>
+                    <p class="text-gray-500 mb-6">How to approach industry partners at our upcoming Cocktail Connections event.</p>
+                    <button class="border-2 border-nuwie-darkest text-nuwie-darkest px-6 py-2 rounded-full font-bold hover:bg-nuwie-darkest hover:text-white transition-colors">Read More</button>
+                </div>
+            </div>
+        </section> -->
+
+    </main>
+    
+
+    <footer class="bg-nuwie-light border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white text-sm">
+            &copy; 2026 Newcastle University Women in Engineering (NUWiE) <br> Developed by Angelica Princena (2026 President)
+        </div>
+    </footer>
+
+</body>
+</html>
