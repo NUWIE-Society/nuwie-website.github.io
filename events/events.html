@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | NUWiE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { nuwie: { darkest: '#2c1461', medium: '#5b47eb', light: '#705eee' } } } }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900" x-data="{ scrolled: true, mobileMenuOpen: false }">
+
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+
+    <div class="h-24"></div>
+
+    <section class="bg-white border-b border-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-black text-nuwie-darkest mb-4">Our Events</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">Upcoming opportunities and past highlights from our community.</p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 py-16" x-data="{ tab: 'upcoming' }">
+        
+        <div class="flex justify-center space-x-8 mb-12">
+            <button @click="tab = 'upcoming'" 
+                    :class="tab === 'upcoming' ? 'border-nuwie-medium text-nuwie-medium' : 'border-transparent text-gray-400'"
+                    class="text-xl font-bold pb-2 border-b-4 transition-all">Upcoming</button>
+            <button @click="tab = 'past'" 
+                    :class="tab === 'past' ? 'border-nuwie-medium text-nuwie-medium' : 'border-transparent text-gray-400'"
+                    class="text-xl font-bold pb-2 border-b-4 transition-all">Past Events</button>
+        </div>
+
+        <div x-show="tab === 'upcoming'" x-transition class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200">
+                     <img src="/images/26cc-execs.png" alt="Morning Tea" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div> 
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">14 April 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4">Biggest Morning Tea - Women in Leardership Panel</h3>
+                    <a href="#" class="block text-center bg-nuwie-darkest text-white py-3 rounded-lg font-bold hover:bg-nuwie-medium transition">Register Now</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200">
+                     <img src="/images/26execs.jpg" alt="Coffee Catch Ups" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div> 
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">MONDAY, 23 March 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4">NEXT Coffee Catch Up</h3>
+                    <a href="#" class="block text-center bg-nuwie-darkest text-white py-3 rounded-lg font-bold hover:bg-nuwie-medium transition">Register Now</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200">
+                     <img src="/images/25bae-tour.JPG" alt="BAE Systems" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div> 
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">TBA</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4">BAE Systems Site Tour</h3>
+                    <a href="#" class="block text-center bg-nuwie-darkest text-white py-3 rounded-lg font-bold hover:bg-nuwie-medium transition">Register Now</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200">
+                     <img src="" alt="img" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div> 
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">TBA</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4">4Tel Project ft. NUbots & NUteams</h3>
+                    <a href="#" class="block text-center bg-nuwie-darkest text-white py-3 rounded-lg font-bold hover:bg-nuwie-medium transition">Register Now</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200">
+                     <img src="" alt="img" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div> 
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">TBA</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4">Zenviron Site Tour</h3>
+                    <a href="#" class="block text-center bg-nuwie-darkest text-white py-3 rounded-lg font-bold hover:bg-nuwie-medium transition">Register Now</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div x-show="tab === 'past'" x-transition class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
+    
+            <a href="" class="block bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 opacity-90 hover:opacity-100 hover:shadow-md transition group">
+                <div class="h-48 overflow-hidden bg-gray-200">
+                    <img src="/images/26cc-northrop.png" alt="Cocktail Connections" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">18 March 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4 group-hover:text-nuwie-medium transition">2026 Cocktail Connections Sponsored by Northrop</h3>
+                    <span class="text-nuwie-medium text-xs font-bold uppercase tracking-wider">View Recap →</span>
+                </div>
+            </a>
+
+            <a href="" class="block bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 opacity-90 hover:opacity-100 hover:shadow-md transition group">
+                <div class="h-48 overflow-hidden bg-gray-200">
+                    <img src="/images/26iwd.JPG" alt="IWD" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">6 March 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4 group-hover:text-nuwie-medium transition">International Women's Day Picnic</h3>
+                    <span class="text-nuwie-medium text-xs font-bold uppercase tracking-wider">View Recap →</span>
+                </div>
+            </a>
+
+            <a href="" class="block bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 opacity-90 hover:opacity-100 hover:shadow-md transition group">
+                <div class="h-48 overflow-hidden bg-gray-200">
+                    <img src="" alt="Coffee Catch Ups" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">Semester 1 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4 group-hover:text-nuwie-medium transition">Weekly Coffee Catch Ups</h3>
+                    <span class="text-nuwie-medium text-xs font-bold uppercase tracking-wider">View Recap →</span>
+                </div>
+            </a>
+
+            <a href="" class="block bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 opacity-90 hover:opacity-100 hover:shadow-md transition group">
+                <div class="h-48 overflow-hidden bg-gray-200">
+                    <img src="" alt="Trivia Night" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-nuwie-medium font-bold text-sm mb-2">21 February 2026</div>
+                    <h3 class="text-xl font-bold text-nuwie-darkest mb-4 group-hover:text-nuwie-medium transition">Trivia Night</h3>
+                    <span class="text-nuwie-medium text-xs font-bold uppercase tracking-wider">View Recap →</span>
+                </div>
+            </a>
+
+        </div>
+        
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="text-center text-gray-400 text-sm">
+            &copy; 2026 Newcastle University Women in Engineering (NUWiE)
+        </div>
+    </footer>
+</body>
+</html>
