@@ -44,40 +44,47 @@
                         </h2>
                         
                         <div class="flex gap-1.5">
-                            <button @click="activePost = activePost === 1 ? 3 : activePost - 1" 
-                                    class="p-1.5 bg-white/10 hover:bg-white/20 rounded-full transition border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                                </svg>
+                            <button @click="activePost = activePost === 1 ? 3 : activePost - 1" class="p-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/10 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                             </button>
-                            <button @click="activePost = activePost === 3 ? 1 : activePost + 1" 
-                                    class="p-1.5 bg-white/10 hover:bg-white/20 rounded-full transition border border-white/10">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
+                            <button @click="activePost = activePost === 3 ? 1 : activePost + 1" class="p-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/10 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                             </button>
                         </div>
                     </div>
 
-                    <div class="relative min-h-[470px]">
+                    <div class="relative h-[450px] w-full bg-white rounded-xl shadow-lg overflow-hidden">
                         
-                        <div x-show="activePost === 1" x-transition.opacity.duration.400ms
-                            class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_1" 
-                                    height="450" width="100%" frameborder="0" allowfullscreen="" title="Post 1"></iframe>
+                        <div x-show="activePost === 1" 
+                            x-transition:enter="transition opacity duration-500"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            class="h-[450px] overflow-y-auto custom-scrollbar">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7440576740508246016" 
+                                    height="896" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" scrolling="yes"></iframe>
                         </div>
 
-                        <div x-show="activePost === 2" x-transition.opacity.duration.400ms
-                            class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_2" 
-                                    height="450" width="100%" frameborder="0" allowfullscreen="" title="Post 2"></iframe>
+                        <div x-show="activePost === 2" 
+                            x-transition:enter="transition opacity duration-500"
+                            class="h-[450px] overflow-y-auto custom-scrollbar">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7440287189541974016" 
+                                    height="1095" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" scrolling="yes"></iframe>
                         </div>
 
-                        <div x-show="activePost === 3" x-transition.opacity.duration.400ms
-                            class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_3" 
-                                    height="450" width="100%" frameborder="0" allowfullscreen="" title="Post 3"></iframe>
+                        <div x-show="activePost === 3" 
+                            x-transition:enter="transition opacity duration-500"
+                            class="h-[450px] overflow-y-auto custom-scrollbar">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7384024533734936576" 
+                            height="864" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"scrolling="yes"></iframe>
                         </div>
+
+                        <!-- COPY EMBED FULL POST, change width to 100% and add scrolling"yes"
+                        <div x-show="activePost === 3" 
+                            x-transition:enter="transition opacity duration-500"
+                            class="h-[450px] overflow-y-auto custom-scrollbar">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7384024533734936576" 
+                            height="864" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"scrolling="yes"></iframe>
+                        </div> -->
                     </div>
 
                     <div class="flex justify-center gap-1.5 mt-4">
@@ -96,7 +103,7 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="h-6 w-6" alt="IG">
                             Latest on Instagram
                         </h2>
-                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="text-sm font-bold text-nuwie-medium hover:underline">@nuwie_uon</a>
+                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="text-sm font-bold text-nuwie-medium hover:underline">@nuwie.society</a>
                     </div>
 
                     <div class="grid grid-cols-3 gap-4">
