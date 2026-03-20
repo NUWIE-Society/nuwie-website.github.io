@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors | NUWiE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { nuwie: { darkest: '#2c1461', medium: '#5b47eb', light: '#705eee' } } } }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900" x-data="{ scrolled: true, mobileMenuOpen: false }">
+
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+
+    <div class="h-24"></div>
+
+    <section class="bg-white border-b border-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-black text-nuwie-darkest mb-4">Our Partners</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">Empowering the next generation of engineers through industry collaboration.</p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 py-16 space-y-24">
+
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif text-nuwie-darkest italic">2026 PLATINUM Sponsors</h2>
+                <div class="h-1 w-20 bg-nuwie-medium mx-auto mt-2"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-20 items-center">
+            
+            <a href="https://4tel.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/4tel.png" alt="4Tel" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://bgeeng.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/bge.png" alt="BG&E" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.essentialenergy.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/essentialenergy.png" alt="Essential Energy" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.robsoncivilprojects.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/robson.png" alt="Robson Civil Projects" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.ghd.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/ghd.png" alt="GHD" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://zenviron.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/zenviron.png" alt="Zenviron" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+        </div>
+        </section>
+
+        <section>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif text-nuwie-darkest italic">2026 GOLD Sponsors</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-90">
+                <a href="https://4tel.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/4tel.png" alt="4Tel" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://bgeeng.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/bge.png" alt="BG&E" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.essentialenergy.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/essentialenergy.png" alt="Essential Energy" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.robsoncivilprojects.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/robson.png" alt="Robson Civil Projects" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.ghd.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/ghd.png" alt="GHD" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://zenviron.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/zenviron.png" alt="Zenviron" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-serif text-nuwie-darkest italic">2026 SILVER Sponsors</h2>
+            </div>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-6 items-center opacity-80">
+                <a href="https://4tel.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/4tel.png" alt="4Tel" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://bgeeng.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/bge.png" alt="BG&E" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.essentialenergy.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/essentialenergy.png" alt="Essential Energy" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.robsoncivilprojects.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/robson.png" alt="Robson Civil Projects" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://www.ghd.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/ghd.png" alt="GHD" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+
+            <a href="https://zenviron.com/" target="_blank" rel="noopener noreferrer" class="flex justify-center group">
+                <img src="/sponsors/logos/zenviron.png" alt="Zenviron" class="h-20 md:h-28 object-contain transition-transform duration-300 hover:scale-110">
+            </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="text-center text-gray-400 text-sm">
+            &copy; 2026 NUWiE | Designed & Developed by Angelica Princena
+        </div>
+    </footer>
+
+</body>
+</html>
