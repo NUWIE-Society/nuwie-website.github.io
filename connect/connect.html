@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | NUWiE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { nuwie: { darkest: '#2c1461', medium: '#5b47eb', light: '#705eee' } } } }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900" x-data="{ scrolled: true, mobileMenuOpen: false }">
+
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+
+    <div class="h-24"></div>
+
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-nuwie-darkest mb-4">Let's Connect</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">The best way to stay updated with NUWiE events, industry news, and student life.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 space-y-8">
+
+
+                <section class="bg-gradient-to-br from-nuwie-darkest to-nuwie-medium p-6 md:p-10 rounded-3xl text-white shadow-xl" 
+                        x-data="{ activePost: 1 }">
+                    
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-2xl font-bold flex items-center gap-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="h-6 w-6 rounded shadow-sm" alt="LI">
+                            Industry Shoutouts
+                        </h2>
+                        
+                        <div class="flex gap-2">
+                            <button @click="activePost = activePost === 1 ? 3 : activePost - 1" 
+                                    class="p-2 bg-white/10 hover:bg-white/20 rounded-full transition border border-white/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button @click="activePost = activePost === 3 ? 1 : activePost + 1" 
+                                    class="p-2 bg-white/10 hover:bg-white/20 rounded-full transition border border-white/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative min-h-[620px]">
+                        
+                        <div x-show="activePost === 1" x-transition.opacity.duration.500ms
+                            class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_1" 
+                                    height="600" width="100%" frameborder="0" allowfullscreen="" title="Post 1"></iframe>
+                        </div>
+
+                        <div x-show="activePost === 2" x-transition.opacity.duration.500ms
+                            class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_2" 
+                                    height="600" width="100%" frameborder="0" allowfullscreen="" title="Post 2"></iframe>
+                        </div>
+
+                        <div x-show="activePost === 3" x-transition.opacity.duration.500ms
+                            class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:PASTE_POST_ID_3" 
+                                    height="600" width="100%" frameborder="0" allowfullscreen="" title="Post 3"></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-center gap-2 mt-6">
+                        <template x-for="i in [1, 2, 3]">
+                            <button @click="activePost = i" 
+                                    :class="activePost === i ? 'bg-white w-6' : 'bg-white/30 w-2'" 
+                                    class="h-2 rounded-full transition-all duration-300"></button>
+                        </template>
+                    </div>
+                </section>
+
+                
+                <section class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-nuwie-darkest flex items-center gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="h-6 w-6" alt="IG">
+                            Latest on Instagram
+                        </h2>
+                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="text-sm font-bold text-nuwie-medium hover:underline">@nuwie_uon</a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="aspect-square bg-gray-100 rounded-xl overflow-hidden hover:opacity-90 transition group">
+                            <img src="images/ig-post-1.jpg" alt="Recent Event" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </a>
+                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="aspect-square bg-gray-100 rounded-xl overflow-hidden hover:opacity-90 transition group">
+                            <img src="images/ig-post-2.jpg" alt="Study Session" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </a>
+                        <a href="https://instagram.com/nuwie_uon" target="_blank" class="aspect-square bg-gray-100 rounded-xl overflow-hidden hover:opacity-90 transition group">
+                            <img src="images/ig-post-3.jpg" alt="Partner Feature" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="space-y-6">
+                
+                <div class="bg-white p-6 rounded-3xl shadow-sm border-2 border-nuwie-light relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-nuwie-light text-white text-[10px] font-black px-3 py-1 rounded-bl-lg uppercase tracking-widest">Justice of the Peace</div>
+                    <h3 class="font-bold text-nuwie-darkest mb-1">President's Office</h3>
+                    <p class="text-xs text-gray-400 mb-4 font-medium uppercase tracking-tighter">Certified Documents & Inquiries</p>
+                    <a href="mailto:admin@nuwie.com.au" class="block bg-gray-50 p-4 rounded-xl border border-gray-100 hover:border-nuwie-light transition group">
+                        <span class="block font-bold text-nuwie-darkest group-hover:text-nuwie-medium">admin@nuwie.com.au</span>
+                        <span class="text-xs text-gray-500 italic">Direct contact for Angelica Princena (JP)</span>
+                    </a>
+                </div>
+
+                <div class="bg-gray-900 text-white p-6 rounded-3xl shadow-lg">
+                    <h3 class="font-bold mb-6 text-xl tracking-tight">Direct Inquiries</h3>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:industry@nuwie.com.au" class="block group">
+                            <span class="block text-xs uppercase font-black text-nuwie-light tracking-widest mb-1">For Companies</span>
+                            <p class="text-sm font-bold group-hover:text-nuwie-light transition">industry@nuwie.com.au</p>
+                        </a>
+                        
+                        <hr class="border-gray-800">
+
+                        <a href="mailto:info@nuwie.com.au" class="block group">
+                            <span class="block text-xs uppercase font-black text-nuwie-light tracking-widest mb-1">For Students</span>
+                            <p class="text-sm font-bold group-hover:text-nuwie-light transition">info@nuwie.com.au</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://facebook.com/nuwie" target="_blank" class="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-100 hover:shadow-md transition font-bold text-blue-600">Facebook</a>
+                    <a href="https://linkedin.com/company/nuwie" target="_blank" class="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-100 hover:shadow-md transition font-bold text-nuwie-darkest">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-nuwie-light border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white text-sm">
+            &copy; 2026 Newcastle University Women in Engineering (NUWiE) <br> Developed by Angelica Princena (2026 President)
+        </div>
+    </footer>
+
+</body>
+</html>
