@@ -1,6 +1,6 @@
 <nav 
         :class="[
-        scrolled ? 'h-24 bg-white/95 backdrop-blur shadow-md' : 'min-h-[350px] bg-white pt-4 md:pt-10 md:pb-6',
+        scrolled ? 'h-24 bg-white backdrop-blur shadow-md' : 'h-24 bg-white pt-4 md:min-h-[400px] md:pb-6',
         (mobileMenuOpen || !scrolled || sponsorOpen || aboutOpen) ? 'allow-dropdown' : 'overflow-hidden'
         ]"
         class="fixed w-full z-50 top-0 left-0 header-transition border-b border-gray-100 flex flex-col justify-center"
@@ -13,9 +13,9 @@
                 
                 <div :class="scrolled ? 'w-auto mr-6 md:mr-10' : 'mb-6'"> 
                     <video autoplay loop muted playsinline 
-                           :class="scrolled ? 'h-18 md:h-20' : 'h-40 md:h-64'"
+                           :class="scrolled ? 'h-20 md:h-20' : 'h-20 md:h-64'"
                            class="w-auto header-transition logo-morph">
-                        <source src="/sponsors/logos/nuwie-logo.mp4" type="video/mp4">
+                        <source src="/sponsors/logos/nuwie-logo-spinning.mp4" type="video/mp4">
                         <img src="/sponsors/logos/nuwie-logo.png" alt="NUWIE">
                     </video>
                 </div>
@@ -58,27 +58,36 @@
                     </a>
                 </div>
 
-                <!-- <div class="md:hidden absolute top-8 right-4 z-[60]">
+                <div class="md:hidden absolute top-8 right-4 z-[60]">
                      <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-nuwie-darkest p-2 focus:outline-none">
                      <svg x-show="!mobileMenuOpen" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
                      <svg x-show="mobileMenuOpen" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                      </button>
-                </div> -->
+                </div>
             </div>
         </div>
 
-        <!-- <div x-show="mobileMenuOpen" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             class="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl px-6 py-8 space-y-6">
-            <a href="index.html" class="block text-xl font-bold">Home</a>
-            <a href="#" class="block text-xl font-bold">Events</a>
-            <a href="#" class="block text-xl font-bold">Newsletter</a>
-            <a href="#" class="block text-xl font-bold">Sponsors</a>
-            <a href="#" class="block text-xl font-bold">About Us</a>
-            <a href="#" class="block w-full bg-nuwie-darkest text-white text-center py-4 rounded-xl font-bold">Join Now</a>
-        </div> -->
+<div x-show="mobileMenuOpen" 
+     x-cloak
+     x-transition:enter="transition ease-out duration-200"
+     x-transition:enter-start="opacity-0 -translate-y-4"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-150"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 -translate-y-4"
+     @click.away="mobileMenuOpen = false"
+     class="md:hidden bg-white border-t border-gray-100 absolute top-full left-0 w-full shadow-2xl px-6 py-8 space-y-6 flex flex-col z-[60]">
+    
+    <a href="/index.html" class="block text-xl font-bold text-nuwie-darkest hover:text-nuwie-medium">Home</a>
+    <a href="/events/events.html" class="block text-xl font-bold text-nuwie-darkest hover:text-nuwie-medium">Events</a>
+    <a href="/careers/careers.html" class="block text-xl font-bold text-nuwie-darkest hover:text-nuwie-medium">Careers</a>
+    <a href="/sponsors/sponsors.html" class="block text-xl font-bold text-nuwie-darkest hover:text-nuwie-medium">Sponsors</a>
+    <a href="/connect/connect.html" class="block text-xl font-bold text-nuwie-darkest hover:text-nuwie-medium">Let's Connect</a>
+    
+    <a href="https://campus.hellorubric.com/?tab=memberships&s=6304" target="_blank" class="block w-full bg-nuwie-darkest text-white text-center py-4 rounded-xl font-bold shadow-lg active:scale-95 transition-transform">
+        Become a Member
+    </a>
+</div>
     </nav>
 
         

@@ -1,47 +1,9 @@
-/* --- NUWIE IDENTITY SKELETON --- */
-
-:root {
-    /* Brand Colors */
-    --nuwie-darkest: #2c1461;
-    --nuwie-medium: #5b47eb;
-    --nuwie-light: #705eee;
-    --white: #ffffff;
-    --gray-bg: #f9fafb;
-    --text-main: #111827;
-    --text-muted: #6b7280;
-
-    /* Spacing & Sizing Scale */
-    --header-height-compact: 96px; /* 24 in Tailwind */
-    --max-width: 1280px; /* 7xl in Tailwind */
+[x-cloak] { 
+    display: none !important; 
 }
 
-/* --- CORE RESETS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.5;
-    background-color: var(--gray-bg);
-    color: var(--text-main);
-    overflow-x: hidden;
-}
-
-/* --- UTILITY SKELETON CLASSES --- */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.header-transition {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Logic for dropdowns to work properly */
-.allow-dropdown {
+/* This is your safety net for the mobile menu */
+.mobile-menu-active {
     overflow: visible !important;
+    height: auto !important;
 }
