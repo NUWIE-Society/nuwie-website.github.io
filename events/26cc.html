@@ -193,12 +193,17 @@
                 images: [
                     '/images/26cc-northrop.png', 
                     '/images/26cc-execs.png',
+                    'images/26cc-4tel.png',
                     '/images/26cc-students.png', 
-                    '/images/26cc-filo.png', 
-                    '/images/26cc-4tel.png',
-                    '/images/26cc-bge.png',
                     '/images/26cc-students1.png',
-                    '/images/26cc-execs1.png',
+                    'images/26cc-bge.png',
+                    '/images/26cc-students2.png',
+                    'images/26cc-filo.png',
+
+                    
+
+
+
                 ],
                 init() {
                     setInterval(() => {
@@ -209,6 +214,9 @@
             
             <div class="max-w-3xl mx-auto ">
                 <h2 class="text-3xl font-black text-nuwie-darkest mb-10 text-center">The Night in Photos</h2>
+                <p class="text-xs uppercase tracking-[0.3em] font-black text-gray-400 mb-4">
+                        More photos will be uploaded in the album in the coming week.
+                    </p>
 
                 <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
                     <template x-for="(img, index) in images" :key="index">
@@ -229,21 +237,20 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
                 </div>
-
-                <div class="mt-8 flex justify-center items-center gap-4 overflow-x-auto pb-4">
-                    <template x-for="(img, index) in images" :key="index">
-                        <button @click="active = index" 
+            </div>
+            <div class="mt-8 flex justify-center items-center gap-4 overflow-x-auto pb-4">
+                <template x-for="(img, index) in images" :key="index">
+                    <button @click="active = index" 
                                 class="relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden transition-all duration-500 border-4"
                                 :class="active === index ? 'border-nuwie-medium scale-110 shadow-lg' : 'border-transparent opacity-50 hover:opacity-100'">
-                            <img :src="img" class="w-full h-full object-cover">
-                        </button>
-                    </template>
+                         <img :src="img" class="w-full h-full object-cover">
+                     </button>
+                </template>
                     
-                    <a href="#" class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-nuwie-light flex flex-col items-center justify-center text-white p-2 text-center hover:bg-nuwie-medium transition-colors">
+                <a href="https://drive.google.com/drive/folders/16FpWcrvWTkhmvFIshAR_AV6EENq-ejuK?usp=sharing" target="_blank" rel="noopener noreferrer"  class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-nuwie-light flex flex-col items-center justify-center text-white p-2 text-center hover:bg-nuwie-medium transition-colors">
                         <span class="text-[10px] font-bold uppercase leading-tight">View Full Album →</span>
-                    </a>
-                </div>
-            </div>
+                </a>
+             </div>
         </section>
 
         <div class="max-w-6xl mx-auto px-4 py-10 mb-20">
@@ -264,7 +271,8 @@
                 <img src="/sponsors/logos/aecom.png" alt="Aecom" class="h-12 w-auto">
                 <img src="/sponsors/logos/aurecon.png" alt="Aurecon" class="h-12 w-auto">
                 <img src="/sponsors/logos/xenith.png" alt="Xenith" class="h-12 w-auto">
-                <img src="/sponsors/logos/daracon.jpg" alt="Daracon" class="h-12 w-auto">
+                <img src="/sponsors/logos/xenith.png" alt="Xenith" class="h-12 w-auto">
+                <img src="/sponsors/logos/ampcontrol.png" alt="Ampcontrol" class="h-12 w-auto">
                 <img src="/sponsors/logos/symal.png" alt="Symal" class="h-12 w-auto">
 
             
