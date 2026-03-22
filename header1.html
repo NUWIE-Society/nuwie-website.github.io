@@ -20,44 +20,46 @@
                     </video>
                 </div>
 
-                <div 
+                <ul id="nav-menu" 
                     :class="scrolled ? 'flex items-center space-x-8' : 'flex items-center justify-center space-x-10 w-full border-t border-gray-100 mt-6 pt-6'"
-                    class="md:flex font-bold text-nuwie-darkest uppercase tracking-widest text-xs"
+                    class="hidden md:flex z-[-1] md:z-auto font-bold text-nuwie-darkest uppercase tracking-widest text-xs"
                 >   
-                    
-                    <a href="/index.html" class="hover:text-nuwie-medium transition">Home</a>
-                    <a href="/events/events.html" class="hover:text-nuwie-medium transition">Events</a>
-                    <a href="/careers/careers.html" class="hover:text-nuwie-medium transition">Careers</a>
-
-                    <div class="relative" @mouseenter="sponsorOpen = true" @mouseleave="sponsorOpen = false">
-                        <button class="flex items-center hover:text-nuwie-medium uppercase">
-                            Sponsors <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div x-show="sponsorOpen" x-transition class="absolute left-0 w-48 bg-white shadow-xl rounded-lg py-2 border border-gray-100 normal-case font-medium">
-                            <a href="/sponsors/sponsors.html" class="block px-4 py-2 hover:bg-gray-50">2026 Sponsors</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-400">2025 Sponsors</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-400">2024 Sponsors</a>
-                            <a href="/sponsors/partner-with-us.html" class="block px-4 py-2 hover:bg-gray-50 font-bold">Partner with us</a>
-                        </div>
-                    </div>
-
-                    <!-- <div class="relative" @mouseenter="aboutOpen = true" @mouseleave="aboutOpen = false">
-                        <button class="flex items-center hover:text-nuwie-medium uppercase">
-                             
-                        </button>
-                        <div x-show="aboutOpen" x-transition class="absolute left-0 w-56 bg-white shadow-xl rounded-lg py-2 border border-gray-100 normal-case font-medium">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">2026 Executive Team</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-400">2025 Executive Team</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 text-gray-400">2024 Executive Team</a>
-                        </div>
-                    </div> -->
-
-                    <a href="/connect/connect.html" class="hover:text-nuwie-medium transition">Let's Connect</a>
-                    
-                    <a href="https://campus.hellorubric.com/?tab=memberships&s=6304" target="_blank" rel="noopener noreferrer" class="bg-nuwie-darkest text-white px-6 py-2 rounded-lg hover:bg-nuwie-medium transition shadow-md">
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="/index.html" class="hover:text-nuwie-medium duration-30 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nuwie-medium group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="/events/events.html" class="hover:text-nuwie-medium duration-30 relative group">
+                        Events
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nuwie-medium group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="/careers/careers.html" class="hover:text-nuwie-medium duration-30 relative group">
+                        Careers
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nuwie-medium group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="/sponsors/sponsors.html" class="hover:text-nuwie-medium duration-30 relative group">
+                        Sponsors
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nuwie-medium group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="/connect/connect.html" class="hover:text-nuwie-medium duration-30 relative group">
+                        Let's Connect
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-nuwie-medium group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="https://campus.hellorubric.com/?tab=memberships&s=6304" target="_blank" rel="noopener noreferrer" class="bg-nuwie-darkest text-white px-6 py-2 rounded-lg hover:bg-nuwie-medium transition shadow-md">
                         Become a Member
-                    </a>
-                </div>
+                        </a>
+                    </li>
+                </ul>
 
                 <div class="md:hidden absolute top-8 right-4 z-[60]">
                      <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-nuwie-darkest p-2 focus:outline-none">
