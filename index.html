@@ -21,7 +21,7 @@
 
 <body class="bg-gray-50 text-gray-900" x-data="{ scrolled: false, mobileMenuOpen: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
 
-    <div x-data="{ html: '' }" x-init="fetch('/header1.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
 
     <div :class="scrolled ? 'h-32' : 'h-[180px] md:h-[380px]'" class="header-transition"></div>
 
