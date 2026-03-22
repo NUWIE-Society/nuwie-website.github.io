@@ -193,12 +193,12 @@
                 images: [
                     '/images/26cc-northrop.png', 
                     '/images/26cc-execs.png',
-                    'images/26cc-4tel.png',
+                    '/images/26cc-4tel.png',
                     '/images/26cc-students.png', 
                     '/images/26cc-students1.png',
-                    'images/26cc-bge.png',
+                    '/images/26cc-bge.png',
                     '/images/26cc-students2.png',
-                    'images/26cc-filo.png',
+                    '/images/26cc-filo.png',
 
                     
 
@@ -216,8 +216,8 @@
                 <h2 class="text-3xl font-black text-nuwie-darkest mb-10 text-center">The Night in Photos</h2>
                 <p class="text-xs uppercase tracking-[0.3em] font-black text-gray-400 mb-4">
                         More photos will be uploaded in the album in the coming week.
-                    </p>
-
+                </p>
+                
                 <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
                     <template x-for="(img, index) in images" :key="index">
                         <img x-show="active === index" 
@@ -247,10 +247,12 @@
                      </button>
                 </template>
                     
-                <a href="https://drive.google.com/drive/folders/16FpWcrvWTkhmvFIshAR_AV6EENq-ejuK?usp=sharing" target="_blank" rel="noopener noreferrer"  class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-nuwie-light flex flex-col items-center justify-center text-white p-2 text-center hover:bg-nuwie-medium transition-colors">
-                        <span class="text-[10px] font-bold uppercase leading-tight">View Full Album →</span>
-                </a>
-             </div>
+            </div>
+
+            <a href="https://drive.google.com/drive/folders/16FpWcrvWTkhmvFIshAR_AV6EENq-ejuK?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <span class=" font-bold uppercase leading-tight hover:text-nuwie-medium transition">View Full Album →</span>
+            </a>
+             
         </section>
 
         <div class="max-w-6xl mx-auto px-4 py-10 mb-20">
