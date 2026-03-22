@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | NUWiE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { nuwie: { darkest: '#2c1461', medium: '#5b47eb', light: '#705eee' } } } }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900" x-data="{ scrolled: true, mobileMenuOpen: false }">
+
+    <div x-data="{ html: '' }" x-init="fetch('/header.html').then(r => r.text()).then(t => html = t)" x-html="html"></div>
+    <div class="h-24"></div>
+
+    <main class="flex-grow mx-auto text-center ">
+
+        <section class="relative w-full h-[80vh] md:h-screen overflow-hidden bg-gray-900">
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        disablePictureInPicture
+        class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+    >
+        <source src="/events/recaps/26cc-title.mp4" type="video/mp4">
+        <img src="/events/recaps/26cc-title.png" alt="Cocktail Connections 2026" class="w-full h-full object-cover">
+    </video>
+
+    <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+</section>
+        </div>
+</div>
+
+            <div class="text-center mt-10">
+                <p class="text-xl md:text-2xl text-gray-600 max-w-7xl mx-auto leading-relaxed">
+                    An evening of networking, inspiration, and industry insights at the Merewether Surfhouse.
+                </p>
+
+                <div class="mt-8 flex flex-col items-center">
+                    <p class="text-xs uppercase tracking-[0.3em] font-black text-gray-400 mb-4">
+                        Thank you to our event sponsor
+                    </p>
+                    <a href="https://northrop.com.au/" target="_blank" rel="noopener noreferrer" class="flex justify-center group" class="p-2 inline-block transition-transform hover:scale-105 duration-300">
+                        <img src="/sponsors/logos/northrop.svg" alt="Northrop" class="h-10 md:h-14 w-auto">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-8 text-left">
+            
+            <div class="bg-nuwie-darkest grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 py-8 border-y border-gray-100 rounded-3xl">
+                <div class="text-center">
+                    <div class="text-4xl font-black text-nuwie-medium">130+</div>
+                    <div class="text-xs uppercase tracking-widest text-white font-bold mt-1">Attendees</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-black text-nuwie-medium">17</div>
+                    <div class="text-xs uppercase tracking-widest text-white font-bold mt-1">Companies</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-black text-nuwie-medium">11th</div>
+                    <div class="text-xs uppercase tracking-widest text-white font-bold mt-1">Annual Event</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-black text-nuwie-medium">2015</div>
+                    <div class="text-xs uppercase tracking-widest text-white font-bold mt-1">Inception</div>
+                </div>
+            </div>
+
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <h2 class="text-3xl font-black text-nuwie-darkest mb-6 text-center md:text-left">A Legacy of Connection</h2>
+                
+                <p class="mb-6">
+                    Since its inception in 2015, <strong>Cocktail Connections</strong> has grown to become the flagship networking event for the Newcastle University Women in Engineering (NUWiE) society. What started as a small gathering has evolved into a high-impact evening that bridges the gap between the classroom and the professional world.
+                </p>
+                
+                <p class="mb-6">
+                    Held annually, this year at the iconic Merewether Surfhouse, the event provides a unique, relaxed environment where students can engage in meaningful conversations with industry leaders without the pressure of a formal interview. Over the last decade, Cocktail Connections has been the starting point for hundreds of internships, graduate positions, and lifelong mentorships within the Hunter region's engineering community.
+                </p>
+
+                <blockquote class="border-l-4 border-nuwie-light pl-6 py-2 italic text-nuwie-darkest font-medium my-10 bg-nuwie-light/5 rounded-r-xl">
+                    "Cocktail Connections isn't just about handing out resumes; it's about building the community that will support our students throughout their entire careers."
+                </a>
+            </div>
+        </section>        
+
+        <section class="max-w-5xl mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2" 
+                    x-data="{ 
+                        activeSlide: 0, 
+                        slides: ['/images/26cc-northrop.png', '/images/25cc-northrop.JPG', '/images/24cc-northrop.JPG'],
+                        init() {
+                            setInterval(() => {
+                                this.activeSlide = (this.activeSlide + 1) % this.slides.length
+                            }, 3000)
+                        }
+                    }">
+                    <div class="relative h-64 md:h-96 overflow-hidden rounded-2xl shadow-xl">
+                        <template x-for="(slide, index) in slides" :key="index">
+                            <div x-show="activeSlide === index" 
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 transform scale-95"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="absolute inset-0">
+                                <img :src="slide" class="w-full h-full object-cover" alt="Carousel Image">
+                            </div>
+                        </template>
+
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <template x-for="(slide, index) in slides" :key="index">
+                                <div @click="activeSlide = index" 
+                                    :class="activeSlide === index ? 'bg-white w-4' : 'bg-white/50 w-2'" 
+                                    class="h-2 rounded-full cursor-pointer transition-all duration-300"></div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 space-y-4">
+                    <h2 class="text-3xl font-bold text-nuwie-darkest">The Northrop x NUWiE Story</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        For the past several years, <strong>Northrop</strong> has been a cornerstone of the Cocktail Connections experience. 
+                        Their unwavering commitment to diversity in engineering has allowed us to keep this event accessible to all students. 
+                        From providing keynote speakers to offering direct mentorship on the night, 
+                        Northrop continues to empower the next generation of female engineers in our region.
+                    </p>
+                </div>
+            
+                
+
+            </div>
+        </section>       
+        
+        
+        <!-- <div class="flex gap-10 border-l border-white/20 pl-8">
+            <div>
+                <div class="text-4xl font-black">150+</div>
+                <div class="text-sm uppercase text-gray-400">Attendees</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black">12</div>
+                <div class="text-sm uppercase text-gray-400">Industry Sponsors</div>
+            </div>
+        </div> -->
+          
+
+        
+
+        
+
+
+        <section class="py-10 bg-gray-50 p-10 ">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-black text-pink-300 mb-16">Key Highlights</h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div>
+                        <div class="text-nuwie-medium text-5xl mb-4">🥂</div>
+                        <h3 class="text-nuwie-darkest font-bold text-xl mb-2">Networking</h3>
+                        <p class="text-nuwie-darkest">Students connected with industry representatives from Newcastle, Port Macquarie and Sydney companies in a relaxed coastal setting.</p>
+                    </div>
+                    <div>
+                        <div class="text-nuwie-medium text-5xl mb-4">🎤</div>
+                        <h3 class="text-nuwie-darkest font-bold text-xl mb-2">Presidential Address</h3>
+                        <p class="text-nuwie-darkest">Our 2026 President shared the vision for the year ahead, focusing on empowerment, industry bridge-building, and community growth.</p>
+                    </div>
+                    <div>
+                        <div class="text-nuwie-medium text-5xl mb-4">🤝</div>
+                        <h3 class=" text-nuwie-darkest font-bold text-xl mb-2">Career Opportunities</h3>
+                        <p class="text-nuwie-darkest">Multiple internship leads and graduate connections were forged throughout the evening.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="py-10 " 
+            x-data="{ 
+                active: 0, 
+                images: [
+                    '/images/26cc-northrop.png', 
+                    '/images/26cc-execs.png',
+                    '/images/26cc-students.png', 
+                    '/images/26cc-execs1.png', 
+                    '/images/26cc-4tel.png',
+                    '/images/26cc-bge.png',
+                ],
+                init() {
+                    setInterval(() => {
+                        this.active = (this.active + 1) % this.images.length;
+                    }, 5000); // 5000ms = 5 seconds
+                }
+            }">
+            
+            <div class="max-w-3xl mx-auto ">
+                <h2 class="text-3xl font-black text-nuwie-darkest mb-10 text-center">The Night in Photos</h2>
+
+                <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
+                    <template x-for="(img, index) in images" :key="index">
+                        <img x-show="active === index" 
+                            :src="img" 
+                            x-transition:enter="transition duration-1000 ease-in-out"
+                            x-transition:enter-start="opacity-0 scale-105"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            class="absolute inset-0 w-full h-full object-cover">
+                    </template>
+
+                    <button @click="active = (active === 0 ? images.length - 1 : active - 1)" 
+                            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button @click="active = (active === images.length - 1 ? 0 : active + 1)" 
+                            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+
+                <div class="mt-8 flex justify-center items-center gap-4 overflow-x-auto pb-4">
+                    <template x-for="(img, index) in images" :key="index">
+                        <button @click="active = index" 
+                                class="relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden transition-all duration-500 border-4"
+                                :class="active === index ? 'border-nuwie-medium scale-110 shadow-lg' : 'border-transparent opacity-50 hover:opacity-100'">
+                            <img :src="img" class="w-full h-full object-cover">
+                        </button>
+                    </template>
+                    
+                    <a href="#" class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-nuwie-light flex flex-col items-center justify-center text-white p-2 text-center hover:bg-nuwie-medium transition-colors">
+                        <span class="text-[10px] font-bold uppercase leading-tight">View Full Album →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-6xl mx-auto px-4 py-10 mb-20">
+            <h3 class="text-sm uppercase tracking-[0.2em] font-black text-gray-400 mb-8 text-center">Industry Representation</h3>
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-8 hover:opacity-100 transition-all duration-500">
+                <img src="/sponsors/logos/4tel.png" alt="4Tel" class="h-12 w-auto">
+                <img src="/sponsors/logos/bge.png" alt="BGE" class="h-12 w-auto">
+                <img src="/sponsors/logos/essentialenergy.png" alt="essential Energy" class="h-12 w-auto">
+                <img src="/sponsors/logos/ghd.png" alt="GHD" class="h-12 w-auto">
+                <img src="/sponsors/logos/robson.png" alt="Robson Civil" class="h-12 w-auto">
+                <img src="/sponsors/logos/zenviron.png" alt="Zenviron" class="h-12 w-auto">
+                <img src="/sponsors/logos/bae.png" alt="BAE" class="h-12 w-auto">
+                <img src="/sponsors/logos/beeng.webp" alt="BEENG" class="h-12 w-auto">
+                <img src="/sponsors/logos/eire.png" alt="Eire" class="h-12 w-auto">
+                <img src="/sponsors/logos/orica.png" alt="Orica" class="h-12 w-auto">
+                <img src="/sponsors/logos/wga.png" alt="WGA" class="h-12 w-auto">
+                <img src="/sponsors/logos/adwjohnson.png" alt="ADW Johnson" class="h-12 w-auto">
+                <img src="/sponsors/logos/aecom.png" alt="Aecom" class="h-12 w-auto">
+                <img src="/sponsors/logos/aurecon.png" alt="Aurecon" class="h-12 w-auto">
+                <img src="/sponsors/logos/xenith.png" alt="Xenith" class="h-12 w-auto">
+                <img src="/sponsors/logos/daracon.jpg" alt="Daracon" class="h-12 w-auto">
+                <img src="/sponsors/logos/symal.png" alt="Symal" class="h-12 w-auto">
+
+            
+            </div>
+        </div>        
+        
+    </main>
+
+    <footer class="bg-nuwie-light border-t border-gray-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white text-sm">
+            &copy; 2026 Newcastle University Women in Engineering (NUWiE) <br> Developed by Angelica Princena (2026 President)
+        </div>
+    </footer>
+
+</body>
+</html>
